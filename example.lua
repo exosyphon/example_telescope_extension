@@ -41,4 +41,4 @@ local example = function(opts)
     }):find()
 end
 
-example()
+example(require("telescope.themes").get_dropdown {})
