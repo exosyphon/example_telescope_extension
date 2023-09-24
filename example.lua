@@ -7,9 +7,7 @@ local action_state = require "telescope.actions.state"
 local example = function(opts)
     opts = opts or {}
     pickers.new(opts, {
-        finder = finders.new_table {
-            results = { "blue", "elflord", "desert" }
-        },
+        finder = finders.new_table(vim.fn.getcompletion("", "color")),
         sorter = conf.generic_sorter(opts),
         attach_mappings = function(bufnr, map)
             actions.select_default:replace(function()
